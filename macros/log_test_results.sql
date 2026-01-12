@@ -7,7 +7,7 @@
     
     {# Create audit table if it doesn't exist #}
     {% set create_table_sql %}
-      create table if not exists  target.database.audit_schema.audit_table  (
+      create table if not exists {{ target.database }}.{{ audit_schema }}.{{ audit_table }}  (
         table_name varchar(500),
         column_name varchar(500),
         test varchar(500),
@@ -68,7 +68,7 @@
         
         {# Insert into audit table #}
         {% set insert_sql %}
-          insert into  target.database . audit_schema . audit_table  
+          insert into {{ target.database }}.{{ audit_schema }}.{{ audit_table }}
             (table_name, column_name, test, failed_count, failed_rows, run_at, test_status, test_unique_id, invocation_id)
           values (
             ' table_name ',
