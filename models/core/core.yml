@@ -7,10 +7,15 @@ models:
       - name: order_id
         data_type: number
         description: ""
+        tests:
+          - unique
+          - not_null
 
       - name: order_date
         data_type: date
         description: ""
+        tests:
+          - unique
 
       - name: status
         data_type: varchar
