@@ -24,9 +24,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-vars:
-  SRC_DATE: "{{ env_var('DBT_SRC_DATE', (modules.datetime.datetime.now().date() - modules.datetime.timedelta(days=1)).isoformat()) }}"
-
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -39,6 +36,10 @@ vars:
 
 on-run-end:
   - "{{ log_test_results() }}"
+
+models:
+  elementary:
+    +schema: "elementary"
 
 tests:
   +store_failures: true
