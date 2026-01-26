@@ -44,3 +44,10 @@ models:
 tests:
   +store_failures: true
   +store_failures_as: table  
+
+vars:
+  "ids_ct_start_datetime": "2025-11-21 12:26:25.859 -0500"
+  tier_1_warn_after: "{{ 6 if env_var('DBT_CLOUD_ENVIRONMENT_NAME', 'development') | lower == 'production' else 24 }}"
+  tier_1_error_after: "{{ 12 if env_var('DBT_CLOUD_ENVIRONMENT_NAME', 'development') | lower == 'production' else 48 }}"
+  tier_2_warn_after: "{{ 24 if env_var('DBT_CLOUD_ENVIRONMENT_NAME', 'development') | lower == 'production' else 48 }}"
+  tier_2_error_after: "{{ 48 if env_var('DBT_CLOUD_ENVIRONMENT_NAME', 'development') | lower == 'production' else 72 }}"
