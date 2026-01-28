@@ -3,6 +3,9 @@ sources:
     description: This is a replica of the Postgres database used by our app
     database: raw
     schema: jaffle_shop
+    config: 
+      freshness:
+        warn_after: {count: 12, period: hour}
     tables:
       - name: customers
         description: One record per customer.
