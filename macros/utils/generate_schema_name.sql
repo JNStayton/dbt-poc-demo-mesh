@@ -6,13 +6,13 @@
 
     {% if env_name == 'development' %}
 
-        {{ default_schema ~ '_' ~ custom_schema_name | trim }}
+        {{ default_schema }}
 
     {% elif context == 'ci' %}
 
         {{ default_schema ~ '_' ~ custom_schema_name | trim }}
 
-    {% elif env_name in ['production', 'uat'] %}
+    {% elif 'production' in env_name %}
 
         {{ custom_schema_name | trim }}
 
