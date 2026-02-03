@@ -1,0 +1,17 @@
+[sqlfluff]
+dialect = snowflake
+templater = dbt
+runaway_limit = 10
+max_line_length = 80
+indent_unit = space
+exclude_rules = LT01, RF04, ST06
+
+[sqlfluff:indentation]
+tab_space_size = 4
+
+[sqlfluff:layout:type:comma]
+spacing_before = touch
+line_position = leading
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
