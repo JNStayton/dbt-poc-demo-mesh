@@ -6,6 +6,13 @@ name: 'jaffle_data_analytics'
 version: '1.0.0'
 config-version: 2
 
+dispatch:
+  - macro_namespace: dbt
+    search_order:
+      - "jaffle_labs"
+      - "jaffle_data_analytics"
+      - "dbt"
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
