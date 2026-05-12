@@ -1,4 +1,4 @@
-{% macro default__generate_schema_name(custom_schema_name, node) -%}
+{% macro default__generate_schema_name_v2(custom_schema_name, node) -%}
     {% set env_name = env_var('DBT_CLOUD_ENVIRONMENT_NAME') | lower %}
     {% set context = env_var('DBT_CLOUD_INVOCATION_CONTEXT') | lower %}
 
