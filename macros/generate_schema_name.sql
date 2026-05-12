@@ -1,3 +1,7 @@
+{% macro generate_schema_name(custom_schema_name, node) -%}
+    {{ return(adapter.dispatch('generate_schema_name', 'jaffle_labs')(custom_schema_name, node)) }}
+{%- endmacro %}
+
 {% macro default__generate_schema_name(custom_schema_name, node) -%}
 
     {%- if custom_schema_name is none -%}
